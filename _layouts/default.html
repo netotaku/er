@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="description of this document for google">
+    <meta name="generator" content="ZX Spectrum 128+2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="{{ "assets/scss/style.css" | prepend: site.baseurl }}">
+  </head>
+  <body>
+
+    <header>
+      <img class="logo" src="/assets/img/eastvillerunning.JPG">
+    </header>
+
+    <div class="pure-g">
+      <section class="pure-u-3-4">
+        <div class="l-box">
+          {{ content }}
+          <ul>
+            <li><a href="https://www.facebook.com/groups/303941706700411/">Facebook</a></li>
+            <li><a href="https://eastvillerunning.slack.com/">Slack</a></li>
+            <li><a href="https://www.strava.com/clubs/eastville-running-club">Strava</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+  </body>
+</html>
