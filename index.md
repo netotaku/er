@@ -9,7 +9,7 @@ layout: default
 
 <strong>Bristol, UK.</strong>
 
-<em>We are on a mission to raise £1500 for Glenfrome Primary School.  We're a group of parents who have dabbled with a bit of running, to varying degrees of success. But now we’re ready to take on a mega challenge: The <a href="http://www.greatrun.org/great-bristol-half-marathon">Bristol Half Marathon</a>, and in doing so raise some serious cash for our fantastic local primary school.</em>
+<em>We are on a mission to raise £1500 for <a href="http://www.glenfrome.bristol.sch.uk/">Glenfrome Primary School</a>.  We're a group of parents who have dabbled with a bit of running, to varying degrees of success. But now we’re ready to take on a mega challenge: The <a href="http://www.greatrun.org/great-bristol-half-marathon">Bristol Half Marathon</a>, and in doing so raise some serious cash for our fantastic local primary school.</em>
 
 <a href="http://www.glenfrome.bristol.sch.uk/">Glenfrome primary school</a> is a fantastic inner city school, serving a diverse community in the East of Bristol.
 
