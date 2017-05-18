@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    <meta name="description" content="description of this document for google">
+    <meta name="description" content="We are on a mission to raise £1500 for Glenfrome Primary School.">
     <meta name="generator" content="ZX Spectrum 128+2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/base-min.css">
@@ -16,15 +16,21 @@
     <header>
       <img class="logo" src="/assets/img/eastvillerunning.JPG">
     </header>
-    
+
     <div class="l-box">
       {{ content }}
+      <h2>Get in touch</h2>
       <ul>
         <li><a href="https://www.facebook.com/groups/303941706700411/">Facebook</a></li>
         <li><a href="https://eastvillerunning.slack.com/">Slack</a></li>
         <li><a href="https://www.strava.com/clubs/eastville-running-club">Strava</a></li>
       </ul>
     </div>
+
+    <footer>
+      <img class="bolt" class="logo" src="/assets/img/bolt.png">
+      <p><strong>Eastville Running Club, 2017</strong></p>
+    </footer>
 
   </body>
 </html>
