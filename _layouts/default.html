@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/base-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
-    <link rel="stylesheet" href="{{ "assets/scss/style.css?afdvas" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "assets/scss/style.css?2" | prepend: site.baseurl }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -17,19 +18,23 @@
       <img class="logo" src="/assets/img/eastvillerunning.JPG">
     </header>
 
-    <div class="l-box">
-      {{ content }}
-      <h2>Join</h2>
-      <ul>
-        <li><a href="https://www.facebook.com/groups/303941706700411/">Facebook</a></li>
-        <li><a href="https://eastvillerunning.slack.com/">Slack</a></li>
-        <li><a href="https://www.strava.com/clubs/eastville-running-club">Strava</a></li>
-      </ul>
-    </div>
+    <section role="main">
+      <div class="l-box measure">
+        {{ content }}
+      </div>
+    </section>
+
+    <section class="footer-top">
+      <a href="https://www.strava.com/clubs/eastville-running-club">Strava</a> .
+      <a href="https://eastvillerunning.slack.com/">Slack</a> .
+      <a href="https://www.facebook.com/groups/303941706700411/">Facebook</a>
+    </section>
 
     <footer>
+
       <img class="bolt" class="logo" src="/assets/img/bolt.png">
-      <p><strong>Eastville Running Club, 2017</strong></p>
+      <p><strong>Eastville Running Club, 2017</strong><br>
+        Difficilia quae pulchra.</p>
     </footer>
 
     <script>
