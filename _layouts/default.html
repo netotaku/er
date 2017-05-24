@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/base-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
-    <link rel="stylesheet" href="{{ "assets/scss/style.css?3" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/tables-min.css">
+    <link rel="stylesheet" href="/assets/scss/style.css?3">
   </head>
   <body>
 
     <header>
-      <img class="logo" src="/assets/img/eastvillerunning.JPG">
+      <a href="/"><img class="logo" src="/assets/img/eastvillerunning.JPG"></a>
+      <menu class="main-menu">
+        <a href="/fund-raising/" class="button">Fund Raising</a>
+      </menu>
     </header>
 
     <section role="main">
@@ -48,66 +52,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-    <script>
-      $(function(){
-
-        // console.log(moment().unix());
-        // console.log(moment().subtract(7,'d').unix());
-
-        var token = '?access_token=928f90f92b4ee165f4874ab68c1f1636f7f8fa5b',
-            slug = 'eastville-running-club',
-            base = 'https://www.strava.com/api/v3/clubs/' + slug,
-            weekago = moment().subtract(7,'d').unix(),
-            club_activities = "/activities" + token + '&before=' + weekago,
-            club_members = base + '/members' + token,
-            club_events = base + '/group_events' + token + '&upcoming=true';
-
-        // console.log(club_activities);
-        // console.log(club_members);
-        // console.log(club_events);
-
-        Handlebars.registerHelper('avatar', function(member) {
-          return ( member.profile_medium == 'avatar/athlete/medium.png' ) ? '/assets/img/avatar.png' : member.profile_medium;
-        });
-
-        Handlebars.registerHelper('next', function(ev) {
-          return moment(ev.upcoming_occurrences[0]).format('MMM Do YYYY');
-        });
-
-
-
-        $.getJSON(club_members + '&callback=?', function(data){
-          var source = $("#members-template").html(),
-              template = Handlebars.compile(source);
-          $('#members').append(template({ members: data }));
-        });
-
-        $.getJSON(club_events, function(data){
-          var source = $("#events-template").html(),
-              template = Handlebars.compile(source);
-          $('#events').append(template(data));
-          // console.log(data);
-        });
-
-      });
-    </script>
+    <script src="/assets/js/handlebars.js"></script>
+    <script src="/assets/js/query.js"></script>
+    <script src="/assets/js/uri.js"></script>
 
     {% raw %}
       <script type="text/html" id="events-template">
         <h2>Events</h2>
-        {{#this}}
-          <p><a href="https://www.strava.com/clubs/280340/group_events/{{ id }}" target="_window">{{ next this }}, {{ title }}</a></p>
-        {{/this}}
+        <table class="pure-table">
+          <tbody>
+            {{#this}}
+              <tr>
+                <td>{{ next this }}</td>
+                <td><a href="https://www.strava.com/clubs/280340/group_events/{{ id }}" target="_window">{{ title }}</a></td>
+              </tr>
+            {{/this}}
+          </tbody>
+        </table>
       </script>
       <script type="text/html" id="members-template">
-        {{#members}}
-          <a href="https://www.strava.com/athletes/{{ id }}" target="_window" class="member">
+        {{#this}}
+          <a href="https://www.strava.com/athletes/{{ id }}" target="_window" class="member" title="{{ firstname }}">
             <div class="member__avatar"><img src="{{ avatar this }}"></div>
-            <!-- <div class="member__name">{{ firstname }}</div> -->
           </a>
-        {{/members}}
+        {{/this}}
       </script>
     {% endraw %}
+
+    <script>
+      $(function(){
+        // q(club_members, "#members-template", '#members');
+        q(uri.events(), "#events-template", '#events');
+      });
+    </script>
 
   </body>
 </html>

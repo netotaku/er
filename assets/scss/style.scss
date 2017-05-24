@@ -1,5 +1,7 @@
 ---
 ---
+
+
 body{
   padding: 0px;
   margin: 0px;
@@ -27,6 +29,7 @@ img{
 header{
   background-image: url(/assets/img/header.png);
   background-size: cover;
+  position: relative;
 }
 
 .l-box {
@@ -62,18 +65,12 @@ h1,h2,h3,h4,h4,h5,h6{
 }
 
 h1{
-  // font-size: 3em;
   line-height: 1.2;
 }
 
-// [role=main]{
-//   text-align: center;
-// }
-
 .measure{
-  // max-width: 800px;
+  max-width: 800px;
   margin: auto;
-  text-align: left;
 }
 
 .footer-top{
@@ -82,19 +79,45 @@ h1{
   text-align: center;
 }
 
-.members{
-  overflow: hidden;
-  position: relative;
-}
 
-.member{
-  display: block;
-  width: 14.2857142857%;
-  float: left;
-  &__name{
+
+.main-menu{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 2em;
+  padding-bottom: 0px;
+  margin: 0px;
+
+  .button{
+    display: inline-block;
+    line-height: 20px;
+
+    padding: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background: #fff;
 
   }
-  &__avatar{
 
-  }
 }
+
+
+// .top{
+//   position: relative;
+//   overflow: hidden;
+//   &__button{
+//     display: block;
+//     width: 50%;
+//     float: left;
+//     text-align: center;
+//     color: #fff;
+//     &--strava{
+//       background: #fc4c02;
+//     }
+//     &--facebook{
+//       background: #3b5998;
+//     }
+//   }
+// }
