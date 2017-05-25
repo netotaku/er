@@ -104,6 +104,19 @@ h1{
 }
 
 
+.table-wrapper{
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  table{
+    min-width: 400px;
+    width: 100%;
+    tr td:first-child{
+      width: 155px;
+    }
+  }
+}
+
 // .top{
 //   position: relative;
 //   overflow: hidden;

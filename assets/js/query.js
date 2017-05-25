@@ -1,6 +1,10 @@
-function q(query, t, target){
-  $.getJSON(query + '&callback=?', function(data){
-    console.log(query, t, data);
-    $(target).append(Handlebars.compile($(t).html())(data));
+
+function populate(opt, data){
+  $(opt.target).append(Handlebars.compile($(opt.template).html())(data));
+}
+
+function query(opt){
+  $.getJSON(opt.query + '&callback=?', function(data){
+    opt.callback(opt, data);
   });
 }

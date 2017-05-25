@@ -14,7 +14,7 @@
           return base + '/group_events' + token + '&upcoming=true';
         },
         activities: function(){
-          return "/activities" + token + '&before=' + moment().subtract(7,'d').unix();
+          return base + "/activities" + token + '&before=' + moment().subtract(7,'d').unix();
         }
       }
 

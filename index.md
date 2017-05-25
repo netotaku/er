@@ -7,4 +7,4 @@ layout: default
 
 # Eastville community running and fitness club.
 
-<strong>Bristol, UK.</strong>
+Bristol, BS5.
