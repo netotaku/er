@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/tables-min.css">
     <link rel="stylesheet" href="/assets/scss/style.css?3">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -21,16 +22,9 @@
       </menu>
     </header>
 
-    <section role="main">
-      <div class="l-box measure">
-        {{ content }}
-        <div class="intro"><a href="https://www.strava.com/clubs/eastville-running-club">Join us on Strava</a>,
-        <a href="https://www.facebook.com/groups/303941706700411/">contact us on Facebook</a> and <a href="/fund-raising/">find out about our fund raising</a> for Glenfrome Primary School.</div>
-        <div id="workspace"></div>
-      </div>
-      <div class="members" id="members"></div>
-
-    </section>
+    <div role="main">
+      {{ content }}
+    </div>
 
     <section class="footer-top">
       <a href="https://www.strava.com/clubs/eastville-running-club">Strava</a> .
@@ -42,16 +36,7 @@
       <p><strong>Eastville Running Club, 2017</strong><br>
         Difficilia quae pulchra.</p>
     </footer>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-99432461-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
     <script src="/assets/js/handlebars.js"></script>
@@ -113,59 +98,12 @@
     {% endraw %}
 
     <script>
-      $(function(){
-        // q(club_members, "#members-template", '#members');
-
-        query({
-          query: uri.activities(),
-          callback: function(opt, activities){
-
-            var data = {
-              distance: 0,
-              total_elevation_gain: 0,
-              elapsed_time: 0,
-              max_speed: 0,
-              fastest: '',
-              longest_distance: 0,
-              longest: ''
-            };
-
-            for(activity in activities){
-              var activity = activities[activity];
-
-              data.distance += activity.distance;
-              data.total_elevation_gain += activity.total_elevation_gain;
-              data.elapsed_time += activity.elapsed_time;
-
-              if(data.max_speed < activity.max_speed){
-                data.max_speed = activity.max_speed;
-                data.fastest = activity.athlete.firstname;
-              }
-
-              if(data.longest_distance < activity.distance){
-                data.longest_distance = activity.distance;
-                data.longest = activity.athlete.firstname;
-              }
-
-            }
-
-            ////
-
-            populate({
-              template: "#activities",
-              target: "#workspace"
-            }, data);
-
-          }
-        });
-
-        query({
-          query: uri.events(),
-          callback: populate,
-          template: "#events",
-          target: "#workspace" });
-
-      });
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-99432461-1', 'auto');
+      ga('send', 'pageview');
     </script>
 
   </body>

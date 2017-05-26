@@ -1,0 +1,109 @@
+---
+# You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: default
+---
+<section class="section section--intro">
+  <div class="l-box measure">
+    <h1>Eastville community running and fitness club.</h1>
+    <p>Bristol, BS5.</p>
+    <div class="intro"><a href="https://www.strava.com/clubs/eastville-running-club">Join us on Strava</a>,
+    <a href="https://www.facebook.com/groups/303941706700411/">contact us on Facebook</a> and <a href="/fund-raising/">find out about our fund raising</a> for Glenfrome Primary School.</div>
+  </div>
+</section>
+
+
+<section class="section section--fundraising">
+  <div class="l-box measure">
+    <h2>Fund raising for Glenfrome Primary School</h2>
+    <p>We are on a mission to raise £1500 for <a href="http://www.glenfrome.bristol.sch.uk/">Glenfrome Primary School</a>.  We're a group of parents who have dabbled with a bit of running, to varying degrees of success. But now we’re ready to take on a mega challenge: The <a href="http://www.greatrun.org/great-bristol-half-marathon">Bristol Half Marathon</a>, and in doing so raise some serious cash for our fantastic local primary school.</p>
+    <p><a href="/fund-raising/" class="btn">Help us reach our goal</a></p>
+  </div>
+</section>
+
+<section class="section section--fundraising">
+  <div class="l-box measure">
+    <h2>Preorder a Club Shirt</h2>
+
+    <p>As part of our fundraising efforts <a href="http://the-brightside.co.uk/">The Brightside</a> has designed us an exclusive range of club shirts. All the proceeds go our <a href="/fund-raising/">fund raising effort for Glenfrome Primary School</a>.
+      <br>The shirts will retail for £9.99. (TBC)</p>
+
+    <p><a class="typeform-share btn" href="https://supply1.typeform.com/to/ujg1bf" data-mode="drawer_left" target="_blank">Preorder Now</a></p>
+
+  </div>
+</section>
+
+
+<section class="section section--strava">
+  <div class="l-box measure">
+    <div id="workspace"></div>
+  </div>
+</section>
+
+
+
+<script>
+  $(function(){
+    // q(club_members, "#members-template", '#members');
+
+    (function() {
+      var qs,js,q,s,d=document,
+      gi=d.getElementById,
+      ce=d.createElement,
+      gt=d.getElementsByTagName,
+      id="typef_orm_share",
+      b="https://embed.typeform.com/";
+      if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
+
+    query({
+      query: uri.activities(),
+      callback: function(opt, activities){
+
+        var data = {
+          distance: 0,
+          total_elevation_gain: 0,
+          elapsed_time: 0,
+          max_speed: 0,
+          fastest: '',
+          longest_distance: 0,
+          longest: ''
+        };
+
+        for(activity in activities){
+          var activity = activities[activity];
+
+          data.distance += activity.distance;
+          data.total_elevation_gain += activity.total_elevation_gain;
+          data.elapsed_time += activity.elapsed_time;
+
+          if(data.max_speed < activity.max_speed){
+            data.max_speed = activity.max_speed;
+            data.fastest = activity.athlete.firstname;
+          }
+
+          if(data.longest_distance < activity.distance){
+            data.longest_distance = activity.distance;
+            data.longest = activity.athlete.firstname;
+          }
+
+        }
+
+        ////
+
+        populate({
+          template: "#activities",
+          target: "#workspace"
+        }, data);
+
+      }
+    });
+
+    query({
+      query: uri.events(),
+      callback: populate,
+      template: "#events",
+      target: "#workspace" });
+
+  });
+</script>

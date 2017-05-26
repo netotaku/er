@@ -21,10 +21,10 @@ a{
 *{
   box-sizing: border-box;
 }
-
-img{
-  width: 100%;
-}
+//
+// img{
+//   width: 100%;
+// }
 
 header{
   background-image: url(/assets/img/header.png);
@@ -64,7 +64,7 @@ h1,h2,h3,h4,h4,h5,h6{
   letter-spacing: -1px;
 }
 
-h1{
+h1,h2{
   line-height: 1.2;
 }
 
@@ -96,6 +96,9 @@ h1{
     padding: 14px;
     padding-left: 20px;
     padding-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 
     background: #fff;
 
@@ -119,6 +122,31 @@ h1{
 
 .intro{
   max-width: 480px;
+}
+
+.breadcrumb{
+  padding: 2em;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  background-color:#010101;
+  color:white;
+  cursor:pointer;
+
+  line-height: 1;
+
+  margin:0;
+  padding:12px 28px;
+
+  // max-width:100%;
+  // white-space:nowrap;
+  // overflow:hidden;
+  // text-overflow:ellipsis;
+  font-weight:bold;
 }
 
 // .top{
