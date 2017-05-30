@@ -149,6 +149,21 @@ h1,h2{
   font-weight:bold;
 }
 
+.u{
+  &-figure{
+    padding: 0px;
+    margin: 0px;
+    &--reponsive{
+      img{
+        margin-top: 0.83em;
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
 // .top{
 //   position: relative;
 //   overflow: hidden;
