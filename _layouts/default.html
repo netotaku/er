@@ -15,26 +15,30 @@
   </head>
   <body>
 
-    <header>
+    <a target="_window" class="section section--banner u-l-box u-l-box--half" href="https://www.justgiving.com/crowdfunding/glenfrome">
+      <strong class="section--banner__heading">DONATE NOW!</strong><br>Help us raise money for Glenfrome Primary School.
+    </a>
+
+    <header class="header">
       <a href="/"><img class="logo" src="/assets/img/eastvillerunning.JPG"></a>
-      <menu class="main-menu">
-        <a href="/fund-raising/" class="button">Fund Raising</a>
-      </menu>
     </header>
 
     <div role="main">
       {{ content }}
     </div>
 
-    <section class="footer-top">
-      <a href="https://www.strava.com/clubs/eastville-running-club">Strava</a> .
-      <a href="https://www.facebook.com/groups/303941706700411/">Facebook</a>
-    </section>
 
-    <footer>
-      <img class="bolt" class="logo" src="/assets/img/bolt.png">
-      <p><strong>Eastville Running Club, 2017</strong><br>
-        Difficilia quae pulchra.</p>
+    <footer class="footer">
+      <section class="footer__top">
+        <a target="_window" href="https://www.strava.com/clubs/eastville-running-club">Strava</a> .
+        <a target="_window" href="https://www.facebook.com/groups/303941706700411/">Facebook</a> .
+        <a target="_window" href="https://www.justgiving.com/crowdfunding/glenfrome">Just Giving</a>
+      </section>
+      <div class="footer__base">
+        <img class="logo logo--bolt" src="/assets/img/bolt.png">
+        <p><strong>Eastville Running Club, 2017</strong><br>
+          Difficilia quae pulchra.</p>
+      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -44,9 +48,9 @@
     <script src="/assets/js/uri.js"></script>
 
     {% raw %}
-      <script type="text/html" id="events">
+      <script type="text/html" id="js-events">
         <h2>Events</h2>
-        <div class="table-wrapper">
+        <div class="u-table-wrapper">
           <table class="pure-table">
             <tbody>
               {{#this}}
@@ -59,9 +63,9 @@
           </table>
         </div>
       </script>
-      <script type="text/html" id="activities">
+      <script type="text/html" id="js-activities">
         <h2>Club Activity</h2>
-        <div class="table-wrapper">
+        <div class="u-table-wrapper">
           <table class="pure-table">
             <tbody>
               <tr>
@@ -88,7 +92,7 @@
           </table>
         </div>
       </script>
-      <script type="text/html" id="members">
+      <script type="text/html" id="js-members">
         {{#this}}
           <a href="https://www.strava.com/athletes/{{ id }}" target="_window" class="member" title="{{ firstname }}">
             <div class="member__avatar"><img src="{{ avatar this }}"></div>

@@ -1,18 +1,20 @@
 ---
 ---
 
+$hilight: #8a2291; // purple
+$dark: #010101; // almost black
 
 body{
   padding: 0px;
   margin: 0px;
   line-height: 1.6;
-  color: #666;
-
+  color: $dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 a{
-  color: #000;
+  color: $hilight;
   &:hover{
     text-decoration: none;
   }
@@ -21,42 +23,35 @@ a{
 *{
   box-sizing: border-box;
 }
-//
-// img{
-//   width: 100%;
-// }
 
-header{
+.header{
   background-image: url(/assets/img/header.png);
   background-size: cover;
   position: relative;
 }
 
-.l-box {
-  padding: 2em;
-}
 
 .logo{
   width: 25%;
-}
-
-.bolt{
-  width: 70px;
-}
-
-footer{
-  text-align: center;
-  background: #010101;
-  padding: 2em;
-  color: #fff;
-  a{
-    color: #fff;
+  &--bolt{
+    width: 70px;
   }
 }
 
-em{
-  font-size: 1.6em;
-  font-family: georgia;
+.footer{
+  text-align: center;
+  background: #010101;
+  &__top{
+    padding: 2em;
+    background: #ddd;
+  }
+  &__base{
+    padding: 2em;
+    color: #fff;
+    a{
+      color: #fff;
+    }
+  }
 }
 
 h1,h2,h3,h4,h4,h5,h6{
@@ -69,68 +64,39 @@ h1,h2{
 }
 
 .measure{
-  max-width: 800px;
-  margin: auto;
-}
 
-.footer-top{
-  padding: 2em;
-  background: #f5f5f5;
-  text-align: center;
 }
 
 
-
-.main-menu{
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  padding: 2em;
-  padding-bottom: 0px;
-  margin: 0px;
-
-  .button{
-    display: inline-block;
-    line-height: 20px;
-
-    padding: 14px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-
-    background: #fff;
-
+.section{
+  display: block;
+  &--key-line{
+    border-bottom: solid 3px #eee;
   }
+  &__measure{
+    max-width: 740px;
+    margin: auto;
+  }
+  &--intro{
+    font-size: 1.2em;
+    background-color: #f5f5f5;
+  }
+  &--strava{
+    background-color: #f5f5f5;
+  }
+  &--banner{
+    background-color: $hilight;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    &__heading{
 
-}
-
-
-.table-wrapper{
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  table{
-    min-width: 344px;
-    width: 100%;
-    tr td:first-child{
-      width: 155px;
     }
   }
 }
 
-.intro{
-  max-width: 480px;
-}
 
-.breadcrumb{
-  padding: 2em;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.btn{
+.button{
   display:inline-block;
   text-decoration:none;
   background-color:#010101;
@@ -142,14 +108,37 @@ h1,h2{
   margin:0;
   padding:12px 28px;
 
-  // max-width:100%;
-  // white-space:nowrap;
-  // overflow:hidden;
-  // text-overflow:ellipsis;
   font-weight:bold;
+
+  &--light{
+    background-color: $hilight;
+  }
+
 }
 
 .u{
+
+  &-l-box{
+    padding: 2em;
+    &--half{
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+
+  &-table-wrapper{
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    table{
+      min-width: 344px;
+      width: 100%;
+      tr td:first-child{
+        width: 155px;
+      }
+    }
+  }
+
   &-figure{
     padding: 0px;
     margin: 0px;
@@ -164,20 +153,9 @@ h1,h2{
   }
 }
 
-// .top{
-//   position: relative;
-//   overflow: hidden;
-//   &__button{
-//     display: block;
-//     width: 50%;
-//     float: left;
-//     text-align: center;
-//     color: #fff;
-//     &--strava{
-//       background: #fc4c02;
-//     }
-//     &--facebook{
-//       background: #3b5998;
-//     }
-//   }
-// }
+
+@media only screen and (max-width : 1024px) {
+  .classname {
+      /* other styles here */
+  }
+}

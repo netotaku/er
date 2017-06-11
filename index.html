@@ -4,21 +4,29 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 ---
-<section class="section section--intro">
-  <div class="l-box measure">
-    <h1>Eastville community running and fitness club.</h1>
-    <p>Bristol, BS5.</p>
-    <div class="intro"><a href="https://www.strava.com/clubs/eastville-running-club">Join us on Strava</a>,
-    <a href="https://www.facebook.com/groups/303941706700411/">contact us on Facebook</a> and <a href="/fund-raising/">find out about our fund raising</a> for Glenfrome Primary School.</div>
+
+<section class="section section--intro section--key-line">
+  <div class="section__measure">
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <div class="u-l-box">
+          <h1>Eastville Running Club</h1>
+          <p><strong>Bristol, BS5.</strong> <a href="https://www.instagram.com/explore/tags/runbs5/" target="_window">#runBS5</a></p>
+          <p>We're a growing group of people, based in Eastville Bristol UK, who enjoy running and taking on a challenge, we are
+            definitely a mixed ability bunch, with varying distances and pace capabilities but ultimately enjoy the
+            support and camaraderie a club brings.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 
-<section class="section section--fundraising">
-  <div class="measure">
+<section class="section section--fundraising section--key-line">
+  <div class="section__measure">
     <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1-3">
-          <div class="l-box">
+          <div class="u-l-box">
             <a href="/fund-raising/">
               <figure class="u-figure u-figure--reponsive">
                 <img src="/assets/img/glenfrome.jpg">
@@ -27,26 +35,47 @@ layout: default
           </div>
         </div>
         <div class="pure-u-1 pure-u-md-2-3">
-          <div class="l-box">
-            <h2>Fund raising for Glenfrome Primary School</h2>
+          <div class="u-l-box">
+            <h2>Fund raising for Glenfrome Primary</h2>
             <p>We are on a mission to raise £1500 for <a href="http://www.glenfrome.bristol.sch.uk/">Glenfrome Primary School</a>.  We're a group of parents who have dabbled with a bit of running, to varying degrees of success. But now we’re ready to take on a mega challenge: The <a href="http://www.greatrun.org/great-bristol-half-marathon">Bristol Half Marathon</a>, and in doing so raise some serious cash for our fantastic local primary school.</p>
-            <p><a href="/fund-raising/" class="btn">Help us reach our goal</a></p>
+            <p><a target="_window" href="https://www.justgiving.com/crowdfunding/glenfrome" class="button button--light">Help us reach our goal</a></p>
+            <p><a href="/fund-raising/">Find out more</a></p>
           </div>
         </div>
     </div>
   </div>
 </section>
 
-
-<section class="section section--merchandise">
-  <div class="measure">
+<section class="section section--get-involved section--key-line">
+  <div class="section__measure">
     <div class="pure-g">
       <div class="pure-u-1">
-        <div class="l-box">
+        <div class="u-l-box">
+          <h2>Get Involved</h2>
+          <p><strong>Stay connected and focused and celebrate your successes!</strong></p>
+          <p>We meet and run in the Eastville area, sometimes further-a-field if we fancy it.
+            We coordinate this with the help of our Facebook group and a log our progress
+            and success on Strava</p>
+          <ul>
+            <li><a href="https://www.strava.com/clubs/eastville-running-club">Join Eastville Running Club on Strava</a></li>
+            <li><a href="https://www.facebook.com/groups/303941706700411/">Join the conversation on Facebook</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--merchandise section--key-line">
+  <div class="section__measure">
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <div class="u-l-box">
           <h2>Preorder a Club Shirt</h2>
-          <p>As part of our fundraising efforts <a href="http://the-brightside.co.uk/">The Brightside</a> has designed us an exclusive range of club shirts. All the proceeds go our <a href="/fund-raising/">fund raising effort for Glenfrome Primary School</a>.
-            <br>The shirts will retail for £9.99. (TBC)</p>
-          <p><a class="typeform-share btn" href="https://supply1.typeform.com/to/ujg1bf" data-mode="drawer_left" target="_blank">Preorder Now</a></p>
+          <p>As part of our fundraising efforts <a href="http://the-brightside.co.uk/">The Brightside</a>
+            has designed us an exclusive range of club shirts. All the proceeds go our <a href="/fund-raising/">fund
+              raising effort for Glenfrome Primary School</a>.</p>
+          <p><a class="typeform-share button" href="https://supply1.typeform.com/to/ujg1bf" data-mode="drawer_left" target="_blank">Preorder Now</a></p>
         </div>
       </div>
     </div>
@@ -55,8 +84,9 @@ layout: default
 
 
 <section class="section section--strava">
-  <div class="l-box measure">
-    <div id="workspace"></div>
+  <div class="u-l-box section__measure">
+    <div id="js-workspace"></div>
+    <p><em><a href="https://www.strava.com/clubs/eastville-running-club">Eastville Running Club stats from Strava</a></em></p>
   </div>
 </section>
 
@@ -111,8 +141,8 @@ layout: default
         ////
 
         populate({
-          template: "#activities",
-          target: "#workspace"
+          template: "#js-activities",
+          target: "#js-workspace"
         }, data);
 
       }
@@ -121,8 +151,8 @@ layout: default
     query({
       query: uri.events(),
       callback: populate,
-      template: "#events",
-      target: "#workspace" });
+      template: "#js-events",
+      target: "#js-workspace" });
 
   });
 </script>
